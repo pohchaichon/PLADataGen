@@ -82,24 +82,10 @@ public:
         Point p2{x, y <= min_y + epsilon ? min_y : y - epsilon};
 
         if (points_in_hull == 0) {
-            first_x = x;
-            rectangle[0] = p1;
-            rectangle[1] = p2;
-            upper.clear();
-            lower.clear();
-            upper.push_back(p1);
-            lower.push_back(p2);
-            upper_start = lower_start = 0;
-            ++points_in_hull;
             return true;
         }
 
         if (points_in_hull == 1) {
-            rectangle[2] = p2;
-            rectangle[3] = p1;
-            upper.push_back(p1);
-            lower.push_back(p2);
-            ++points_in_hull;
             return true;
         }
 
